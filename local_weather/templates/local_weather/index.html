@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div id="primarybackground" class="TemperatureBackgroundColourNice">
+    <div id="IconDisplayArea" class="flex items-center flex-col justify-center min-h-screen">
+        <!-- Current weather readout. Displays current weather as well as witty comment related to it -->
+        <button id="toggleButton" class="mb-4 p-2 bg-blue-500 text-white rounded">Toggle Search/GPS</button>
+        <div id="searchbar" class="flex items-center flex-col justify-center">
+            <div id="placeForm">
+                <label id="placeNameLabel" for="placeName">Location:</label>
+                <input type="text" id="placeName" name="placeName" required>
+                <button id="submitButton" data-type="button">Submit</button>
+            </div>
+        </div>
+        <div id="GPSlocation" class="flex items-center flex-col justify-center">
+            <h1 class="text-2xl font-bold mb-4 text-center"><span id="GPSLabel">GPS Location:</span><br><span
+                    id="GPSLocation">Processing</span></h1>
+        </div>
+        <div class="IconDisplayArea bg-[#ffffff] p-6 rounded-lg shadow-lg">
+            <!-- Card content goes here -->
+            <h2 id="TopTextArea" class="MainAreaTextTop text-2xl font-bold mb-4 text-center"><br>Accessing<br>
+                Location<br> Data</h2>
+            <div class="text-center">
+                <div id="iconbackground" class="w-13 h-18 bg-blue-500 rounded-full mx-auto mb-4">
+                    <!-- <i id="MainIcon" class="IconChoice text-6xl text-yellow-500"></i> --->
+                    <img id="MainIcon" class="IconChoice" src="">
+                    <!-- fas fa-cloud-sun -->
+                </div>
+
+            </div>
+            <p id="BottomTextArea" class="MainAreaTextBottom text-center"></p>
+        </div>
+        <div>
+            <p id="TemperatureDisplay" class="TemperatureTextArea"></p>
+        </div>
+        <br>
+        <div>
+            <p id="UVIndexDisplay" class="UVIndexTextArea"></p>
+        </div>
+    </div>
+    <!-- Five day forecast - does what it says on the tin; shows the forecast for the next five days -->
+    <div class="flex justify-center items-center min-h-screen">
+        <div class="5DayForecastBox max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">5 Day Forecast</div>
+                <p class="text-gray-700 text-base">
+                    Detailed weather forecast for the next 5 days.
+                </p>
+            </div>
+            <div class="flex justify-center items-center mt-4 px-6 pt-4 pb-2">
+                <div>
+                    <p class="Day1">Day1</p>
+                    <i class="Day1Icon fas fa-sun text-yellow-500 text-2xl mx-2"></i>
+                    <span class="Day1Weather text-gray-700">Sunny</span>
+                    <span class="Day1TempHi text-gray-700">- 25°C</span>
+                    <span class="Day1TempLo text-gray-700">- 25°C</span>
+                </div>
+                <div>
+                    <p class="Day2">Day2</p>
+                    <i class="Day2Icon fas fa-cloud text-gray-500 text-2xl mx-2"></i>
+                    <span class="Day2Weather text-gray-700">Sunny</span>
+                    <span class="Day2TempHi text-gray-700">- 25°C</span>
+                    <span class="Day2TempLo text-gray-700">- 25°C</span>
+                </div>
+                <div>
+                    <p class="Day3">Day3</p>
+                    <i class="Day3Icon fas fa-cloud-rain text-blue-500 text-2xl mx-2"></i>
+                    <span class="Day3Weather text-gray-700">Sunny</span>
+                    <span class="Day3TempHi text-gray-700">- 25°C</span>
+                    <span class="Day3TempLo text-gray-700">- 25°C</span>
+                </div>
+                <div>
+                    <p class="Day4">Day4</p>
+                    <i class="Day4Icon fas fa-snowflake text-blue-300 text-2xl mx-2"></i>
+                    <span class="Day4Weather text-gray-700">Sunny</span>
+                    <span class="Day4TempHi text-gray-700">- 25°C</span>
+                    <span class="Day4TempLo text-gray-700">- 25°C</span>
+                </div>
+                <div>
+                    <p class="Day5">Day5</p>
+                    <i class="Day5Icon fas fa-wind text-gray-400 text-2xl mx-2"></i>
+                    <span class="Day5Weather text-gray-700">Sunny</span>
+                    <span class="Day5TempHi text-gray-700">- 25°C</span>
+                    <span class="Day5TempLo text-gray-700">- 25°C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
